@@ -8,6 +8,7 @@ const schema = z.object({
   gptResponse: z.string(),
   movementStats: z.string(),
   grabbedItem: z.string(),
+  conceptName: z.string(),
 })
 
 const storage = createStorage({
