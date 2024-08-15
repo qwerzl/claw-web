@@ -1,6 +1,7 @@
 import { createStorage } from 'unstorage'
 import vercelKVDriver from 'unstorage/drivers/vercel-kv'
 import { z } from 'zod'
+import type { ClawData } from '~/types/clawData'
 
 const schema = z.object({
   key: z.string(),
@@ -17,5 +18,9 @@ export default defineEventHandler(async (event) => {
     setResponseStatus(event, 401)
     return
   }
-  return await storage.getItem(body.id)
+  const clawData = await storage.getItem(body.id) as ClawData
+  clawData.conceptDescription = await storage.getItem(clawData.conceptName) as string
+  clawData.grabbedItemDetails = await storage.getItem(clawData.grabbedItem) as string
+
+  return clawData
 })

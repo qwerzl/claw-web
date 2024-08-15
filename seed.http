@@ -1,0 +1,11 @@
+### GET request to example server
+POST http://localhost:3000/api/new
+Content-Type: application/json
+
+{
+  "key": {{key}},
+  "gptResponse": {{gptResponse}},
+  "movementStats": {{movementStats}}
+}
+
+###
