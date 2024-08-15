@@ -10,6 +10,7 @@ module.exports = {
     fontFamily: {
       sans: ['Inter'],
       serif: ['Playfair Display'],
+      mono: ['Source Code Pro'],
     },
     container: {
       center: true,
@@ -19,6 +20,9 @@ module.exports = {
       },
     },
     extend: {
+      aspectRatio: {
+        '21/9': '21 / 9',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

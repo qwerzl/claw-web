@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxt/fonts": "^0.7.2",
+    "@nuxt/icon": "^1.4.5",
     "@nuxt/image": "^1.7.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
