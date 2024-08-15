@@ -17,6 +17,10 @@ const storage = createStorage({
 export default defineEventHandler(async (event) => {
   const id = uuidv4()
   const body = await readValidatedBody(event, schema.parse)
+  if (body.key !== useRuntimeConfig().apiSecret) {
+    setResponseStatus(event, 401)
+    return
+  }
   await storage.setItem(id, body)
 
   return {
