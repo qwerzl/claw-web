@@ -7,6 +7,10 @@ module.exports = {
   prefix: '',
 
   theme: {
+    fontFamily: {
+      sans: ['Inter'],
+      serif: ['Playfair Display'],
+    },
     container: {
       center: true,
       padding: '2rem',
